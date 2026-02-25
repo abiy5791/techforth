@@ -1,27 +1,31 @@
 import { Link } from 'react-router-dom';
 import { MainLayout } from '../components/MainLayout';
-
+import nationa_lid from '../../assets/images/national-id.jpg';
+import mosip_customization from '../../assets/images/mosip-customization.jpg';
+import secure_biometrics from '../../assets/images/secure-biometrics.jpg';
+import Iris_Scanners from '../../assets/images/iris-scanners.jpg';
+import Fingerprint_Scanners from '../../assets/images/fingerprint-scanners.jpg';
 const techCards = [
   {
     icon: 'badge',
     title: 'National ID Systems',
     body: 'Robust, national-scale identity systems that are secure, efficient, and inclusive — tailored to meet the needs of diverse populations.',
     image:
-      'https://kimi-web-img.moonshot.cn/img/c8.alamy.com/b98b2544fb430784a8c58c67964ad5ea410a6749.jpg',
+      nationa_lid,
   },
   {
     icon: 'settings_suggest',
     title: 'MOSIP Customization',
     body: 'Expert deployment and customization of the open-source MOSIP platform, adapted to local contexts, laws, and specific requirements.',
     image:
-      'https://kimi-web-img.moonshot.cn/img/www.uscybersecurity.net/7695d453e65bb652e6a2644878cd9ba53bc6b750.jpg',
+      mosip_customization,
   },
   {
     icon: 'verified_user',
     title: 'Secure Biometrics',
     body: 'Next-generation biometric authentication with banking-grade encryption, supporting fingerprint, face, and iris recognition.',
     image:
-      'https://kimi-web-img.moonshot.cn/img/c8.alamy.com/650d9944f22ceff9360f54a5308388da1357222a.jpg',
+      secure_biometrics,
   },
 ];
 
@@ -202,12 +206,12 @@ export function Landing() {
               {
                 title: 'Iris Scanners',
                 desc: 'Advanced biometric devices for MOSIP-compliant digital identity systems, accurately verifying identity through unique iris patterns.',
-                img: 'https://kimi-web-img.moonshot.cn/img/recfaces.com/bb4a637a77f2963c98cfd2fdf6be924a98d82b48.png'
+                img: Iris_Scanners
               },
               {
                 title: 'Fingerprint Scanners',
                 desc: 'High-precision fingerprint capture devices that verify identity by matching unique ridge patterns for secure enrollment.',
-                img: 'https://kimi-web-img.moonshot.cn/img/financialcrimeacademy.org/db9fe79f393373cc573931b20d3ce5ab463a55d5.jpg'
+                img: Fingerprint_Scanners
               }
             ].map((product, i) => (
               <div key={i} className="group cursor-pointer">

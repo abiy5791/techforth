@@ -1,5 +1,17 @@
 import { useMemo, useState } from "react";
 import { MainLayout } from "../components/MainLayout";
+import cmiImg from "../../assets/images/cmi.png";
+import iritechBkImg from "../../assets/images/iritech-bk.png";
+import iritechMkImg from "../../assets/images/iritech-mk.png";
+import ibKojakImg from "../../assets/images/ib-kojak.png";
+import ibFiveOImg from "../../assets/images/ib-five-o.png";
+import secuGenHamsterPro20Img from "../../assets/images/secu-gen-hamster-pro-20.png";
+import secuGenHamsterPro30Img from "../../assets/images/secu-gen-hamster-pro-30.png";
+import secuGenHamsterAirImg from "../../assets/images/secu-gen-hamster-air.png";
+import miaxisSm91mImg from "../../assets/images/miaxis-sm-91m.png";
+import logitechWebcamImg from "../../assets/images/logitech-webcam.png";
+import techforthSbiImg from "../../assets/images/techforth-sbi.png";
+import biometricLicenseImg from "../../assets/images/biometric-license.png";
 
 const products = [
   {
@@ -8,16 +20,14 @@ const products = [
     price: "$1,299.00",
     description:
       "High-performance iris recognition scanner with dual-eye capture.",
-    image:
-      "url('https://kimi-web-img.moonshot.cn/img/www.cardlogix.com/16d128a1715910de761827d98bf6935211a0a40b.jpg')",
+    image: cmiImg,
   },
   {
     name: "Iritech BK 2121U",
     type: "Iris Scanner",
     price: "$1,499.00",
     description: "Binocular iris capture device for high-security enrollment.",
-    image:
-      "url('https://kimi-web-img.moonshot.cn/img/identamaster.pro/294add08806eafce3841bd647e2bca4284ab88b9.png')",
+    image: iritechBkImg,
   },
   {
     name: "Iritech MK2120U",
@@ -25,56 +35,49 @@ const products = [
     price: "$1,199.00",
     description:
       "Monocular iris scanner for compact and efficient identification.",
-    image:
-      "url('https://kimi-web-img.moonshot.cn/img/identamaster.pro/7ba203c55a9147114adc0345803f0eb5a4c181ce.png')",
+    image: iritechMkImg,
   },
   {
     name: "IB Kojak",
     type: "Fingerprint Scanner",
     price: "$399.00",
     description: "Compact fingerprint scanner with high-resolution capture.",
-    image:
-      "url('https://kimi-web-img.moonshot.cn/img/integratedbiometrics.com/96bf5604278275973ff900c1aa42109983a12f46.png')",
+    image: ibKojakImg,
   },
   {
     name: "IB Five-O",
     type: "Fingerprint Scanner",
     price: "$449.00",
     description: "Multi-finger capture device for rapid enrollment.",
-    image:
-      "url('https://kimi-web-img.moonshot.cn/img/integratedbiometrics.com/1f39e7999c3db223097baeb605db30fe5ce5cc67.png')",
+    image: ibFiveOImg,
   },
   {
     name: "SecuGen Hamster Pro 20",
     type: "Fingerprint Scanner",
     price: "$299.00",
     description: "Optical fingerprint reader with USB connectivity.",
-    image:
-      "url('https://kimi-web-img.moonshot.cn/img/i5.walmartimages.com/8f198ed06471f5bb698e79a35d2e82b974ed72bc.jpeg')",
+    image: secuGenHamsterPro20Img,
   },
   {
     name: "SecuGen Hamster Pro 30",
     type: "Fingerprint Scanner",
     price: "$349.00",
     description: "Enhanced optical sensor for superior image quality.",
-    image:
-      "url('https://kimi-web-img.moonshot.cn/img/secugen.com/506b91c6433e8f1e5a3dd282b38faf36ff821991.png')",
+    image: secuGenHamsterPro30Img,
   },
   {
     name: "SecuGen Hamster Air",
     type: "Fingerprint Scanner",
     price: "$379.00",
     description: "Touchless fingerprint capture for hygienic authentication.",
-    image:
-      "url('https://kimi-web-img.moonshot.cn/img/www.cardlogix.com/947967d8ecfeee7de9c099a9226e0e20d662816f.webp')",
+    image: secuGenHamsterAirImg,
   },
   {
     name: "Miaxis SM-91M",
     type: "Fingerprint Scanner",
     price: "$329.00",
     description: "Compact module with high-quality fingerprint capture.",
-    image:
-      "url('https://kimi-web-img.moonshot.cn/img/tiimg.tistatic.com/d70bda3afff53b15d29dcf77c971faa5007dbc4c.jpg')",
+    image: miaxisSm91mImg,
   },
   {
     name: "Logitech Webcam",
@@ -82,8 +85,7 @@ const products = [
     price: "$89.00",
     description:
       "High-definition camera for facial capture and authentication.",
-    image:
-      "url('https://kimi-web-img.moonshot.cn/img/resource.logitech.com/f8825ced8bb0eb60301298cc9e86202b6ebb82ff.png')",
+    image: logitechWebcamImg,
   },
   {
     name: "Techforth Generic SBI",
@@ -91,8 +93,7 @@ const products = [
     price: "$599.00",
     description:
       "MOSIP-compliant biometric capture device for fingerprint, face, and iris.",
-    image:
-      "url('https://kimi-web-img.moonshot.cn/img/mosip-marketplace-prod-images.s3.ap-south-1.amazonaws.com/4c2c07b2b4ba3f58022af122019e8e9b12c57226.png')",
+    image: techforthSbiImg,
   },
 ];
 
@@ -165,8 +166,7 @@ export function Products() {
               <div
                 className="absolute inset-0 bg-cover bg-center opacity-80"
                 style={{
-                  backgroundImage:
-                    "url('https://kimi-web-img.moonshot.cn/img/static.vecteezy.com/7ffa530aa221802861cf5f1e07e88e2de081fcc8.jpg')",
+                  backgroundImage:`url(${biometricLicenseImg})`
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--card)] via-[color:var(--card)]/40 to-transparent" />
@@ -233,7 +233,13 @@ export function Products() {
                   )}
                   <div
                     className="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110"
-                    style={{ backgroundImage: product.image }}
+                    style={{
+                      backgroundImage:
+                        typeof product.image === "string" &&
+                        product.image.startsWith("url(")
+                          ? product.image
+                          : `url('${product.image}')`,
+                    }}
                   />
                 </div>
                 <div className="flex flex-col flex-grow">

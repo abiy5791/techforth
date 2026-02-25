@@ -1,4 +1,7 @@
 import { MainLayout } from '../components/MainLayout';
+import identityImg from '../../assets/images/identity-system.jpg';
+import mosipImg from '../../assets/images/mosip-deployment.jpg';
+import trainingImg from '../../assets/images/training-session.jpg';
 
 export function Services() {
   const sections = [
@@ -7,7 +10,7 @@ export function Services() {
       icon: 'badge',
       title: 'National ID System Development',
       body: 'Robust, national-scale identity systems that are secure, efficient, and inclusive — tailored to meet the needs of diverse populations. We architect end-to-end solutions from enrollment to credential issuance.',
-      image: 'https://kimi-web-img.moonshot.cn/img/static.wixstatic.com/01d850056f8a6b16bc8ec8270d4483ed8c9ebadb.jpg',
+      image: identityImg,
       overlay: { label: 'SYSTEM.STATUS: DEPLOYED', title: 'National Identity Platform' },
       features: [
         { icon: 'groups', title: 'Inclusive Design', body: 'Accessibility for diverse populations.' },
@@ -20,7 +23,7 @@ export function Services() {
       icon: 'settings_suggest',
       title: 'MOSIP Customization & Deployment',
       body: 'Recognized experts in adapting the open-source MOSIP platform to local contexts, laws, and specific requirements for client countries. We handle configuration, deployment, and ongoing optimization.',
-      image: 'https://kimi-web-img.moonshot.cn/img/cdn.prod.website-files.com/8c4de7acd238e0526a18af1246414bce12521754.jpg',
+      image: mosipImg,
       overlay: null,
       features: [
         { icon: 'code', title: 'Custom Modules', body: 'Localized feature development.' },
@@ -33,7 +36,7 @@ export function Services() {
       icon: 'school',
       title: 'Consultancy & Technical Training',
       body: 'Empowering local teams through system operation training, integration programs, and sustainable technical support strategies. We build capacity for long-term operational independence.',
-      image: 'https://kimi-web-img.moonshot.cn/img/cioafrica.co/2ddfd7e05adf8a0c71a86d02007b013e9f9c6c20.jpg',
+      image: trainingImg,
       overlay: null,
       features: [
         { icon: 'menu_book', title: 'Hands-on Training', body: 'Biometric device operation.' },
