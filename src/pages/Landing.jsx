@@ -3,48 +3,48 @@ import { MainLayout } from '../components/MainLayout';
 
 const techCards = [
   {
-    icon: 'cloud_queue',
-    title: 'Cloud Infrastructure',
-    body: 'Scalable, resilient cloud solutions engineered for the modern business ecosystem with 99.99% uptime.',
+    icon: 'badge',
+    title: 'National ID Systems',
+    body: 'Robust, national-scale identity systems that are secure, efficient, and inclusive — tailored to meet the needs of diverse populations.',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDXylJJ1Up3-hVYwp9kiwn-aTdvDmZ8te66Zbir_2-faLBRzkYR3qdwt_YWHw37_frKOwZIcge_IGgZu8SMYiD2_MQs1EGmaLHEA6U9G0WXLBCTFtIHkMUuxDQ3i0uhS1QuV3rmUa7buv-w2TzoU3XPOcn7wAqBOJRX6bp2T5drqrF377FB8CbghHE_GlO0dLzJ31aKGwoUIkIzGPHFkomXaRKK41TEoj6xZjQ2fWHihfw4lpA8rBk2yooWmOWmp1Sshz05cghdjA',
+      'https://kimi-web-img.moonshot.cn/img/c8.alamy.com/b98b2544fb430784a8c58c67964ad5ea410a6749.jpg',
   },
   {
-    icon: 'psychology',
-    title: 'Enterprise AI',
-    body: 'Advanced machine learning models that adapt to your data, providing actionable insights in real-time.',
+    icon: 'settings_suggest',
+    title: 'MOSIP Customization',
+    body: 'Expert deployment and customization of the open-source MOSIP platform, adapted to local contexts, laws, and specific requirements.',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBI2ATrs9vC9o0izGkMknrT4BieS3s3-Z2Z-3N16EL_Lr9JGn2WBD_aGZoTLF7Cveh9yzkWwHHowLpKKM1p81x9xaB_LgK7yJNqTxuN4Z5Vbc6TzBV_4T9mTFdCYbA1wEHLjIjwtBERgiKSJoGO_pUL_pb-apOboV9dzPcZPnctv4kaA3dzRK4yhBhUTnlxkWLUzIcA8j0A5H0ZfoVmxnjxb3krjPnwuNsOv4bvRBzv0K2EzFliC4QpEj7N2clP4gru4EU76UWHyg',
+      'https://kimi-web-img.moonshot.cn/img/www.uscybersecurity.net/7695d453e65bb652e6a2644878cd9ba53bc6b750.jpg',
   },
   {
     icon: 'verified_user',
-    title: 'Cyber Security',
-    body: 'Next-generation protection for your sensitive data with banking-grade encryption standards.',
+    title: 'Secure Biometrics',
+    body: 'Next-generation biometric authentication with banking-grade encryption, supporting fingerprint, face, and iris recognition.',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAkUy1z_-cOMQD3uQnZ0ZJ2Y7e0aRCIXt6LeR0lHZWVSRWoeyF0M-0kfDIX6cB5BAm2b8kzMMlZAw9tQ5-hyYPOTgg2VelEoZMeubrdAMxxe9kCt-Nj3v410Gvdqqq-997TvVxsJxc8HW2jsgXV9VZVryF9Q6HyX0LaAqTm2SYxQi5XjbofV8lzJc2MPOjKvLoRoBAuE0ooohUuHk2zhHHy8DM8P5fpja94hMOI2-BqP4v6hz1F94Od3UGrsESdOdXpQLzCyN7M-Q',
+      'https://kimi-web-img.moonshot.cn/img/c8.alamy.com/650d9944f22ceff9360f54a5308388da1357222a.jpg',
   },
 ];
 
 const services = [
-  { icon: 'analytics', title: 'Data Intelligence', body: 'Transform raw data into strategic assets with our advanced analytics and pipelines.' },
-  { icon: 'architecture', title: 'Edge Computing', body: 'Deploy compute closer to data sources for ultra-low latency and peak performance.' },
-  { icon: 'hub', title: 'API Ecosystems', body: 'Seamlessly integrate third-party services and internal systems with robust API management.' },
-  { icon: 'security_update_good', title: 'Compliance Engine', body: 'Automate regulatory compliance and global risk management at scale.' },
+  { icon: 'devices', title: 'Device Management (DMS)', body: 'Centralized registration, monitoring, and control of all biometric field devices.' },
+  { icon: 'fingerprint', title: 'Secure Biometric (SBI)', body: 'MOSIP-compliant interface for fingerprint, face, and iris capture devices.' },
+  { icon: 'person_search', title: 'Manual Adjudication', body: 'Human-led verification workflows for complex identity cases.' },
+  { icon: 'fact_check', title: 'Data Verification (RDVS)', body: 'Cross-checking and validation tools for registration data integrity.' },
 ];
 
 const faqs = [
-  { q: 'How does TechForth integrate with legacy ERP systems?', a: 'Our Universal Bridge API enables bidirectional data flow with SAP, Oracle, and custom environments with zero-downtime migrations.' },
-  { q: 'What encryption standards are used for data at rest?', a: 'We use AES-256 with rotating keys managed by our KMS and support BYOK for enhanced compliance.' },
-  { q: 'Is the AI model training data kept isolated?', a: 'Yes — we process training data in single-tenant containers and never use client data to improve base models.' },
-  { q: 'Can we deploy TechForth on-premise?', a: 'Yes — TechForth Edge supports air-gapped, on-premise deployments with feature parity.' },
+  { q: 'What is MOSIP and why does it matter?', a: 'MOSIP (Modular Open Source Identity Platform) is an open-source platform for building national digital identity systems. It ensures vendor independence, cost efficiency, and compliance with international standards.' },
+  { q: 'How does Techforth ensure data security?', a: 'We implement end-to-end encryption, zero-trust architecture, and strict access controls. All biometric data is handled according to international privacy standards and local regulations.' },
+  { q: 'Can you customize solutions for specific countries?', a: 'Yes — we specialize in adapting MOSIP and our modules to local contexts, languages, legal frameworks, and specific population needs.' },
+  { q: 'What training do you provide for local teams?', a: 'We offer comprehensive capacity-building including system operation, device management, integration strategies, and ongoing technical support to ensure sustainability.' },
 ];
 
 const trustedBy = [
-  { icon: 'rocket_launch', name: 'StellarX' },
-  { icon: 'database', name: 'DataFlow' },
-  { icon: 'shield_moon', name: 'LunarSec' },
-  { icon: 'all_inclusive', name: 'OmniCorp' },
-  { icon: 'memory', name: 'NanoTech' },
+  { icon: 'account_balance', name: 'Ethiopia NID' },
+  { icon: 'fingerprint', name: 'Integrated Bio' },
+  { icon: 'security', name: 'Bio Rugged' },
+  { icon: 'public', name: 'MOSIP' },
+  { icon: 'handshake', name: 'ID2020' },
 ];
 
 export function Landing() {
@@ -57,20 +57,20 @@ export function Landing() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[color:var(--border)] bg-[color:var(--card)]">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-xs font-semibold muted uppercase tracking-widest">
-              System Operational
+              MOSIP Compliant
             </span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.08] text-current font-[Manrope]">
-            Powering the Future of{' '}
+            Empower Identity Through{' '}
             <span className="bg-gradient-to-r from-[color:var(--primary)] to-sky-400 bg-clip-text text-transparent text-glow">
-              Enterprise AI
+              Innovative Technology
             </span>
           </h1>
 
           <p className="text-lg md:text-xl muted max-w-2xl font-light leading-relaxed">
-            Experience the next generation of intelligent enterprise solutions designed for scalability,
-            security, and peak performance.
+            We design, customize, and implement secure, scalable, and inclusive digital identity systems. 
+            Bringing digital transformation to life through cutting-edge biometric technology.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 mt-2 w-full sm:w-auto">
@@ -90,7 +90,7 @@ export function Landing() {
         {/* ─── Trusted By ─── */}
         <section className="mt-16 w-full py-8 border-y border-[color:var(--border)]">
           <p className="text-center text-xs font-bold muted uppercase tracking-[0.3em] mb-6">
-            Trusted by Fortune 500 Leaders
+            Trusted by Governments & Industry Leaders
           </p>
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-50 hover:opacity-80 transition-opacity duration-500">
             {trustedBy.map((b) => (
@@ -109,7 +109,7 @@ export function Landing() {
           <div className="flex items-end justify-between mb-10 gap-4">
             <div>
               <p className="section-label">Technology</p>
-              <h2 className="text-2xl md:text-4xl font-bold text-current font-[Manrope]">Core Technologies</h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-current font-[Manrope]">Core Solutions</h2>
             </div>
             <div className="flex gap-2">
               {['arrow_back', 'arrow_forward'].map((icon) => (
@@ -132,7 +132,7 @@ export function Landing() {
               >
                 {/* Image */}
                 <div className="w-full aspect-video overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--card)] to-transparent z-10" />
+                  <div className="absolute inset-0 z-10" />
                   <img
                     src={card.image}
                     alt={card.title}
@@ -158,9 +158,9 @@ export function Landing() {
         <section className="mt-24 w-full">
           <div className="text-center mb-12">
             <p className="section-label justify-center">Our Capabilities</p>
-            <h2 className="text-2xl md:text-4xl font-bold text-current font-[Manrope] mb-3">Services for Scale</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-current font-[Manrope] mb-3">Integrated MOSIP-Compliant Systems</h2>
             <p className="muted max-w-2xl mx-auto">
-              Tailored enterprise solutions designed to accelerate digital transformation across every layer of your organization.
+              We develop specialized modules that integrate seamlessly with the MOSIP ecosystem to ensure centralized control and data integrity.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -187,7 +187,7 @@ export function Landing() {
             <div className="max-w-xl">
               <p className="section-label">Showcase</p>
               <h2 className="text-2xl md:text-4xl font-bold text-current font-[Manrope] mb-2">Featured Products</h2>
-              <p className="muted">Discover the tools driving innovation in the world&apos;s most successful enterprises.</p>
+              <p className="muted">Production-ready, MOSIP-compliant biometric devices and tools tailored to real-world identity registration challenges.</p>
             </div>
             <Link
               to="/products"
@@ -198,28 +198,39 @@ export function Landing() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[0, 1].map((i) => (
+            {[
+              {
+                title: 'Iris Scanners',
+                desc: 'Advanced biometric devices for MOSIP-compliant digital identity systems, accurately verifying identity through unique iris patterns.',
+                img: 'https://kimi-web-img.moonshot.cn/img/recfaces.com/bb4a637a77f2963c98cfd2fdf6be924a98d82b48.png'
+              },
+              {
+                title: 'Fingerprint Scanners',
+                desc: 'High-precision fingerprint capture devices that verify identity by matching unique ridge patterns for secure enrollment.',
+                img: 'https://kimi-web-img.moonshot.cn/img/financialcrimeacademy.org/db9fe79f393373cc573931b20d3ce5ab463a55d5.jpg'
+              }
+            ].map((product, i) => (
               <div key={i} className="group cursor-pointer">
                 <div className="aspect-video rounded-2xl overflow-hidden mb-5 border border-[color:var(--border)] relative shadow-lg">
                   <div className="absolute inset-0 bg-[color:var(--primary)]/0 group-hover:bg-[color:var(--primary)]/8 transition-colors z-10" />
                   <img
-                    alt={`product-${i}`}
+                    alt={product.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    src="https://images.unsplash.com/photo-1545987796-200677ee1011?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src={product.img}
                   />
                   <div className="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
                     <span className="bg-[color:var(--card)]/80 backdrop-blur-md text-current text-xs font-bold px-3 py-1.5 rounded-full border border-[color:var(--border)]">
-                      v4.0.2 Stable
+                      MOSIP Compliant
                     </span>
                   </div>
                 </div>
                 <div className="flex justify-between items-start gap-4">
                   <div>
                     <h3 className="text-xl font-bold text-current mb-1.5 group-hover:text-[color:var(--primary)] transition-colors">
-                      TechForth Product {i + 1}
+                      {product.title}
                     </h3>
                     <p className="text-sm muted max-w-md">
-                      A concise description highlighting key capabilities and target use-cases.
+                      {product.desc}
                     </p>
                   </div>
                   <button
@@ -239,7 +250,7 @@ export function Landing() {
           <div className="text-center mb-10">
             <p className="section-label justify-center">Support</p>
             <h2 className="text-2xl md:text-4xl font-bold text-current font-[Manrope] mb-2">Technical FAQ</h2>
-            <p className="muted">Common questions from our engineering partners.</p>
+            <p className="muted">Common questions about our digital identity solutions.</p>
           </div>
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((f) => (
@@ -265,9 +276,9 @@ export function Landing() {
         <section className="mt-24 w-full">
           <div className="text-center mb-14">
             <p className="section-label justify-center">Process</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-current font-[Manrope] mb-3">Launch in 3 Steps</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-current font-[Manrope] mb-3">Implementation in 3 Steps</h2>
             <p className="muted text-lg max-w-xl mx-auto">
-              From first contact to full deployment — we get you operational fast.
+              From discovery to deployment — we get your national identity system operational fast.
             </p>
           </div>
 
@@ -279,22 +290,22 @@ export function Landing() {
               {
                 step: '01',
                 icon: 'handshake',
-                title: 'Discovery & Audit',
-                body: 'We map your existing infrastructure, identify bottlenecks, and define a tailored migration blueprint — zero assumptions, all data.',
+                title: 'Discovery & Planning',
+                body: 'We assess your requirements, map existing infrastructure, and design a tailored MOSIP deployment blueprint aligned with local regulations.',
                 tag: '1–2 weeks',
               },
               {
                 step: '02',
                 icon: 'construction',
-                title: 'Build & Integrate',
-                body: 'Our engineers spin up your dedicated environment, wire APIs, configure security policies, and run load testing at scale.',
-                tag: '2–4 weeks',
+                title: 'Customization & Integration',
+                body: 'Our engineers customize MOSIP modules, integrate biometric devices, configure DMS/SBI systems, and conduct comprehensive testing.',
+                tag: '4–8 weeks',
               },
               {
                 step: '03',
                 icon: 'rocket_launch',
-                title: 'Launch & Optimize',
-                body: 'Go live with 24/7 monitoring. We continuously tune performance, push updates, and scale resources as you grow.',
+                title: 'Deployment & Training',
+                body: 'Go live with 24/7 monitoring. We train your local teams on system operation, device management, and ongoing maintenance.',
                 tag: 'Ongoing',
               },
             ].map((item, idx) => (
@@ -332,10 +343,10 @@ export function Landing() {
         <section className="mt-24 rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] p-10 md:p-14">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: '99.9%', label: 'Uptime Guarantee' },
-              { value: '500+', label: 'Enterprise Clients' },
-              { value: '24/7', label: 'Expert Support' },
-              { value: '150+', label: 'Countries Served' },
+              { value: '10+', label: 'Projects Delivered' },
+              { value: '4+', label: 'Industry Awards' },
+              { value: '24/7', label: 'Technical Support' },
+              { value: '100%', label: 'MOSIP Compliant' },
             ].map((s) => (
               <div key={s.label} className="flex flex-col gap-1">
                 <span className="text-3xl md:text-4xl font-bold text-current">{s.value}</span>
@@ -355,17 +366,17 @@ export function Landing() {
           <div className="absolute -bottom-[200px] -right-[200px] w-[600px] h-[600px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none group-hover:bg-purple-600/20 transition-colors duration-1000" />
 
           <h2 className="relative z-10 text-4xl md:text-6xl font-extrabold text-current font-[Manrope] mb-6 tracking-tight">
-            Ready to transform your business?
+            Ready to transform digital identity?
           </h2>
           <p className="relative z-10 muted text-lg md:text-xl max-w-2xl mx-auto mb-10">
-            Join the leading enterprises building the future on TechForth&apos;s robust infrastructure today.
+            Join governments and institutions building the future of secure, inclusive identity systems with Techforth.
           </p>
           <div className="relative z-10 flex flex-col sm:flex-row justify-center gap-5">
             <Link
               to="/contact"
               className="inline-flex items-center justify-center bg-[color:var(--primary)] hover:brightness-110 text-white text-lg font-bold h-14 px-10 rounded-full transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_40px_rgba(6,182,212,0.5)] hover:-translate-y-1"
             >
-              Start Free Trial
+              Start Your Project
             </Link>
             <Link
               to="/contact"

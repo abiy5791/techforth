@@ -3,42 +3,42 @@ import { MainLayout } from '../components/MainLayout';
 export function Services() {
   const sections = [
     {
-      label: 'Infrastructure',
-      icon: 'cloud_queue',
-      title: 'Managed Cloud',
-      body: 'Scalable infrastructure designed for enterprise resilience and high availability. We provide a seamless mesh of computing power that adapts to your needs in real\u2011time.',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAts1diW-5gED_QTIHsB7OfkqF5hjAXaeeJZtUWSuV6FrkI0vDxVt-idfbygNn5_cRbfPRtB5qKNO6-UylMuX103dn3u2LETbMh180GQpKBLo43bWjz_laCQ7Y7nbEVJqg9C7WYU-B8cJz4vzfgxuQyvnooA3NQjmiQXVOH4dXGwd_Klu5IFtn5egQPqfqKd6Hqctuis2E_orpOf2ig2HkfMEHzH7Fprfg-qc37wHf5sa5iyWAxJJ-TpCeQXRPyJiNgU_Z9DcOmBw',
-      overlay: { label: 'SYS.STATUS: ONLINE', title: 'Node Cluster Alpha' },
+      label: 'Identity Systems',
+      icon: 'badge',
+      title: 'National ID System Development',
+      body: 'Robust, national-scale identity systems that are secure, efficient, and inclusive — tailored to meet the needs of diverse populations. We architect end-to-end solutions from enrollment to credential issuance.',
+      image: 'https://kimi-web-img.moonshot.cn/img/static.wixstatic.com/01d850056f8a6b16bc8ec8270d4483ed8c9ebadb.jpg',
+      overlay: { label: 'SYSTEM.STATUS: DEPLOYED', title: 'National Identity Platform' },
       features: [
-        { icon: 'trending_up', title: 'Elastic Scaling', body: 'Dynamic resource allocation based on load.' },
-        { icon: 'security', title: 'Security First', body: 'Zero\u2011trust architecture implementation.' },
-        { icon: 'public', title: 'Global Edge', body: '< 20ms latency worldwide delivery.' },
+        { icon: 'groups', title: 'Inclusive Design', body: 'Accessibility for diverse populations.' },
+        { icon: 'shield', title: 'Secure Architecture', body: 'End-to-end encryption & privacy.' },
+        { icon: 'public', title: 'Scalable Infrastructure', body: 'Millions of identities managed.' },
       ],
     },
     {
-      label: 'Machine Learning',
-      icon: 'psychology',
-      title: 'Neural Networks',
-      body: 'Advanced models tailored to process your data with precision. Unlock patterns hidden within your data lakes using our proprietary deep learning algorithms.',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDCO03IVh3mBE5meCNdySRhczWEjj1cB80suDRiQH0LZ7AY8DrNsFbG9m1-v13YBfrr3fPWubQZwZURKDTwa5rseNPJPVl42WDeCnTcas6hA-MOvCeO_pAPYH_iJrwKF_qW2C_GzdJWAyc-6na_APHmVmF1bBQW-kjbR1DWU95r8GkbcsCy-0MdosSw0VVcTzDR9fPDTKDY3W8rRIOU4vylsGhXD5O-6UeWgnkNbYbEBUmk34N1IdrIxmUGSU8qbit4JECpfwFNCA',
+      label: 'MOSIP Experts',
+      icon: 'settings_suggest',
+      title: 'MOSIP Customization & Deployment',
+      body: 'Recognized experts in adapting the open-source MOSIP platform to local contexts, laws, and specific requirements for client countries. We handle configuration, deployment, and ongoing optimization.',
+      image: 'https://kimi-web-img.moonshot.cn/img/cdn.prod.website-files.com/8c4de7acd238e0526a18af1246414bce12521754.jpg',
       overlay: null,
       features: [
-        { icon: 'memory', title: 'Deep Learning', body: 'Multi\u2011layer perception engines.' },
-        { icon: 'insights', title: 'Predictive Analytics', body: '99.8% accurate forecasting.' },
-        { icon: 'bolt', title: 'Real\u2011time Ops', body: 'Automated processing at scale.' },
+        { icon: 'code', title: 'Custom Modules', body: 'Localized feature development.' },
+        { icon: 'cloud_done', title: 'Cloud Deployment', body: 'Scalable Kubernetes clusters.' },
+        { icon: 'verified', title: 'Compliance Ready', body: 'ID2020 & WCAG standards.' },
       ],
     },
     {
-      label: 'Physical Systems',
-      icon: 'settings_input_component',
-      title: 'Hardware Integration',
-      body: 'Seamless integration of physical systems with digital intelligence. We bridge the gap between software and the tangible world through advanced robotics and IoT ecosystems.',
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAlYQalu3H-vd63q1752-bZkFuoU7-KWv6jpVFylvQvH_Hu6GbapxaSoSRBTjgWso-G4Mmd8E0MO_89Pmsa79b-jinVVk-3H5CgDQxdXexAQ7KhnwBNWkFap8VDTtR2GqvQCLsMhNeYUOmE68BMVFrBvzOjVG6ZB-IPERPUkrY5gpoUJrWkNsn48KAH8hfXm3FUuab5NLf-urezp3YP10vjpopla-Ott_HmHTfWewXcVPUPhiGIy8MhochsCRMXvxbo3GpRHWYuBg',
+      label: 'Training',
+      icon: 'school',
+      title: 'Consultancy & Technical Training',
+      body: 'Empowering local teams through system operation training, integration programs, and sustainable technical support strategies. We build capacity for long-term operational independence.',
+      image: 'https://kimi-web-img.moonshot.cn/img/cioafrica.co/2ddfd7e05adf8a0c71a86d02007b013e9f9c6c20.jpg',
       overlay: null,
       features: [
-        { icon: 'sensors', title: 'IoT Sensors', body: 'Smart data collection arrays.' },
-        { icon: 'precision_manufacturing', title: 'Robotics Control', body: 'Precision automation < 1mm.' },
-        { icon: 'developer_board', title: 'Embedded Systems', body: 'Optimized custom firmware.' },
+        { icon: 'menu_book', title: 'Hands-on Training', body: 'Biometric device operation.' },
+        { icon: 'support_agent', title: '24/7 Support', body: 'Multi-tier helpdesk system.' },
+        { icon: 'sync', title: 'Knowledge Transfer', body: 'Sustainable local capacity.' },
       ],
     },
   ];
@@ -51,12 +51,62 @@ export function Services() {
           <div className="max-w-4xl">
             <p className="section-label">Overview</p>
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-current mb-4 font-[Manrope]">
-              Our Capabilities
+              Services We Provide
             </h1>
             <p className="text-lg muted leading-relaxed">
-              We engineer the backbone of the digital future. From elastic cloud infrastructure to neural
-              processing units, our systems are built for mission\u2011critical performance.
+              Empowering nations with secure, scalable, and inclusive digital identity infrastructure. 
+              From system architecture to biometric enrollment, we deliver end-to-end identity solutions.
             </p>
+          </div>
+        </section>
+
+        {/* Modular Innovation Section */}
+        <section className="rounded-2xl bg-[color:var(--secondary)]/30 border border-[color:var(--border)] p-8 mb-16">
+          <div className="mb-8">
+            <div className="flex items-center gap-3 text-[color:var(--primary)] mb-3">
+              <span className="material-symbols-outlined">extension</span>
+              <span className="text-sm font-bold tracking-wider uppercase">Modular Innovation</span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-current font-[Manrope] mb-3">
+              Integrated MOSIP-Compliant Systems
+            </h2>
+            <p className="muted text-lg leading-relaxed max-w-3xl">
+              We develop specialized modules that integrate seamlessly with the MOSIP ecosystem to ensure 
+              centralized control and data integrity.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { 
+                icon: 'devices', 
+                title: 'Device Management (DMS)', 
+                body: 'Centralized control for all field hardware.' 
+              },
+              { 
+                icon: 'fingerprint', 
+                title: 'Secure Biometric (SBI)', 
+                body: 'Fingerprint, face, and iris capture interface.' 
+              },
+              { 
+                icon: 'person_search', 
+                title: 'Manual Adjudication', 
+                body: 'Human-led verification workflows.' 
+              },
+              { 
+                icon: 'fact_check', 
+                title: 'Data Verification (RDVS)', 
+                body: 'Cross-checking and validation tools.' 
+              },
+            ].map((module) => (
+              <div key={module.title} className="bg-[color:var(--card)] rounded-xl p-6 border border-[color:var(--border)]">
+                <span className="material-symbols-outlined text-[color:var(--primary)] mb-3 text-2xl">
+                  {module.icon}
+                </span>
+                <h3 className="text-current font-semibold mb-2 text-sm">{module.title}</h3>
+                <p className="text-sm muted leading-relaxed">{module.body}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -131,4 +181,3 @@ export function Services() {
 }
 
 export default Services;
-

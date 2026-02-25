@@ -11,29 +11,29 @@ const navItems = [
 
 const footerLinks = [
   {
-    title: 'Product',
+    title: 'Solutions',
     links: [
-      { label: 'Cloud Platform', to: '/products' },
-      { label: 'AI Engine', to: '/products' },
-      { label: 'Security Suite', to: '/products' },
-      { label: 'Pricing', to: '/contact' },
+      { label: 'National ID Systems', to: '/services' },
+      { label: 'MOSIP Deployment', to: '/services' },
+      { label: 'Device Management (DMS)', to: '/services' },
+      { label: 'Secure Biometric (SBI)', to: '/services' },
     ],
   },
   {
-    title: 'Company',
+    title: 'Products',
     links: [
-      { label: 'About Us', to: '/about' },
-      { label: 'Careers', to: '/about' },
-      { label: 'Blog', to: '/about' },
-      { label: 'Press', to: '/about' },
+      { label: 'Iris Scanners', to: '/products' },
+      { label: 'Fingerprint Scanners', to: '/products' },
+      { label: 'Face Camera SBI', to: '/products' },
+      { label: 'MOSIP Kits', to: '/products' },
     ],
   },
   {
     title: 'Resources',
     links: [
       { label: 'Documentation', to: '/services' },
-      { label: 'API Reference', to: '/services' },
-      { label: 'Status Page', to: '/services' },
+      { label: 'MOSIP Guides', to: '/services' },
+      { label: 'Training Programs', to: '/services' },
       { label: 'Support', to: '/contact' },
     ],
   },
@@ -115,9 +115,9 @@ export function MainLayout({ children }) {
               {/* Logo */}
               <Link to="/" className="flex items-center gap-2.5 group">
                 <div className="w-9 h-9 rounded-xl bg-[color:var(--primary)] flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <span className="material-symbols-outlined text-white text-xl">token</span>
+                  <span className="material-symbols-outlined text-white text-xl">fingerprint</span>
                 </div>
-                <span className="font-bold text-lg tracking-tight text-current font-[Manrope]">TechForth</span>
+                <span className="font-bold text-lg tracking-tight text-current font-[Manrope]">Techforth</span>
               </Link>
 
               {/* Desktop Nav */}
@@ -153,13 +153,6 @@ export function MainLayout({ children }) {
                   </span>
                 </button>
 
-                {/* <Link
-                  to="/contact"
-                  className="hidden sm:inline-flex btn-primary text-sm py-2 px-5"
-                >
-                  Get Started
-                </Link> */}
-
                 {/* Mobile hamburger */}
                 <button
                   onClick={() => setMobileOpen(true)}
@@ -187,9 +180,9 @@ export function MainLayout({ children }) {
               <div className="flex items-center justify-between p-5 border-b border-[color:var(--border)]">
                 <Link to="/" className="flex items-center gap-2.5" onClick={() => setMobileOpen(false)}>
                   <div className="w-8 h-8 rounded-lg bg-[color:var(--primary)] flex items-center justify-center">
-                    <span className="material-symbols-outlined text-white text-lg">token</span>
+                    <span className="material-symbols-outlined text-white text-lg">fingerprint</span>
                   </div>
-                  <span className="font-bold text-current font-[Manrope]">TechForth</span>
+                  <span className="font-bold text-current font-[Manrope]">Techforth</span>
                 </Link>
                 <button
                   onClick={() => setMobileOpen(false)}
@@ -233,13 +226,6 @@ export function MainLayout({ children }) {
                   </span>
                   {isDark ? 'Light Mode' : 'Dark Mode'}
                 </button>
-                <Link
-                  to="/contact"
-                  onClick={() => setMobileOpen(false)}
-                  className="btn-primary w-full text-sm py-2.5"
-                >
-                  Get Started
-                </Link>
               </div>
             </div>
           </div>
@@ -259,16 +245,16 @@ export function MainLayout({ children }) {
               <div className="col-span-2">
                 <Link to="/" className="flex items-center gap-2.5 mb-5">
                   <div className="w-9 h-9 rounded-xl bg-[color:var(--primary)] flex items-center justify-center">
-                    <span className="material-symbols-outlined text-white text-xl">token</span>
+                    <span className="material-symbols-outlined text-white text-xl">fingerprint</span>
                   </div>
-                  <span className="font-bold text-lg tracking-tight text-current font-[Manrope]">TechForth</span>
+                  <span className="font-bold text-lg tracking-tight text-current font-[Manrope]">Techforth</span>
                 </Link>
                 <p className="muted text-sm leading-relaxed max-w-xs mb-6">
-                  Pioneering next-generation enterprise solutions. Scalable infrastructure, advanced AI, and
-                  banking-grade security for the modern business.
+                  Techforth Solutions PLC designs and implements secure, scalable, and inclusive digital identity systems. 
+                  MOSIP-compliant solutions for governments and institutions worldwide.
                 </p>
                 <div className="flex gap-3">
-                  {['language', 'code', 'shield'].map((icon) => (
+                  {['fingerprint', 'badge', 'security'].map((icon) => (
                     <div
                       key={icon}
                       className="w-9 h-9 rounded-lg border border-[color:var(--border)] flex items-center justify-center muted hover:text-[color:var(--primary)] hover:border-[color:var(--primary)]/40 transition-colors cursor-pointer"
@@ -302,12 +288,12 @@ export function MainLayout({ children }) {
             {/* Bottom bar */}
             <div className="border-t border-[color:var(--border)] py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-xs muted">
-                &copy; {new Date().getFullYear()} TechForth Solution Plc. All rights reserved.
+                &copy; {new Date().getFullYear()} Techforth Solutions PLC. All rights reserved.
               </p>
               <div className="flex gap-6 text-xs muted">
                 <a href="#" className="hover:text-[color:var(--primary)] transition-colors">Privacy</a>
                 <a href="#" className="hover:text-[color:var(--primary)] transition-colors">Terms</a>
-                <a href="#" className="hover:text-[color:var(--primary)] transition-colors">Cookies</a>
+                <a href="#" className="hover:text-[color:var(--primary)] transition-colors">MOSIP Compliance</a>
               </div>
             </div>
           </div>
@@ -316,4 +302,3 @@ export function MainLayout({ children }) {
     </div>
   );
 }
-

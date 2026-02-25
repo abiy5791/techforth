@@ -1,41 +1,120 @@
-import { MainLayout } from '../components/MainLayout';
+import { useMemo, useState } from "react";
+import { MainLayout } from "../components/MainLayout";
 
 const products = [
   {
-    name: 'Quantum OS License',
-    type: 'Software',
-    price: '$299.00',
-    description: "Single user license for the world's most advanced operating system.",
+    name: "CMI-Tech BMT-20",
+    type: "Iris Scanner",
+    price: "$1,299.00",
+    description:
+      "High-performance iris recognition scanner with dual-eye capture.",
     image:
-      "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwwFtquhD9i88lSZg0RDV00ihsjdf7xTgPfppBlYGjOiLBP6LaY7mbHKx62dPhJjb_LXQi2TS7u3ofav3l0BK3YJi6Vx4qKTQLWfMxQ_68KBfwywkA9vOV9-IU_n6gckS01SWo3TR4fmLsHvAGIGjK0KaqnVqAq2gwmekcyXzAVuuxR6fmgK2uTn3JPSkLMAOeQ5nXcB-JhGOxKfefFctaC7kE4cz10WGbKjTXdne7GS0weUVMRbO_Yu7QGc3L9Tww2ueJcTLTRw')",
+      "url('https://kimi-web-img.moonshot.cn/img/www.cardlogix.com/16d128a1715910de761827d98bf6935211a0a40b.jpg')",
   },
   {
-    name: 'Neural Processor Unit',
-    type: 'Hardware',
-    price: '$899.00',
-    description: 'Hardware acceleration for AI models. 500 TOPS performance.',
+    name: "Iritech BK 2121U",
+    type: "Iris Scanner",
+    price: "$1,499.00",
+    description: "Binocular iris capture device for high-security enrollment.",
     image:
-      "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDD2YVNFnNblEgsXNbTApshYNWgZMtohU7vsm3FslRIu_8ejY13NcQCNirr8fqdb1v6n7_Wg70JIN6Fcz0tuiBRnKWfYDuTKPGgqzw8V4Y0wZ6ei3XAZu519EJZ2SdcEFH1ELaAUjaqb6EGVr0F2l9HCbJGBWJuVtfYDHzkwbPQ1uBrxbn2pGqqIeAg5rklRJDcgfYnP8c5CpVMXSEb60RA3wfqpmZS5VU3ql-RZ09nfZw5lOUM071ZN5jUyTsk513oIamy5F4VGQ')",
+      "url('https://kimi-web-img.moonshot.cn/img/identamaster.pro/294add08806eafce3841bd647e2bca4284ab88b9.png')",
   },
   {
-    name: 'Liquid Cooling Kit',
-    type: 'Hardware',
-    price: '$149.00',
-    description: 'Advanced thermal management for high-performance rigs.',
+    name: "Iritech MK2120U",
+    type: "Iris Scanner",
+    price: "$1,199.00",
+    description:
+      "Monocular iris scanner for compact and efficient identification.",
     image:
-      "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVQkN0z-ARDP1B9GQvvTTteDe3NhsfQ7A8Gv7RP9ql-jhIsMh_2iWoPFSWxLV6mPlQAvEkJh9ZfuDeFN70-CQMyO7SbX6ggMSdwJykmJ3f5lnTgdU4-Jm8QY8wgLy4gNx0f8PHaTEJJE1VTi8h_6ksMkgkEJLHVV9c4o48_hJGe5sFec2PsMoCJZ_cTvpL-joWCTuFsyuLcg9qHe-v6sFB_o_ihOjytGu84exGtXIUpbjmGPiQc0raNEFW3EKK3pk6Ubw72GtSEQ')",
+      "url('https://kimi-web-img.moonshot.cn/img/identamaster.pro/7ba203c55a9147114adc0345803f0eb5a4c181ce.png')",
   },
   {
-    name: 'Titan Portable SSD',
-    type: 'Hardware',
-    price: '$429.00',
-    description: '4TB rugged storage with encryption.',
+    name: "IB Kojak",
+    type: "Fingerprint Scanner",
+    price: "$399.00",
+    description: "Compact fingerprint scanner with high-resolution capture.",
     image:
-      "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOsfnyjzZeRKjyhM8SP8MYUdS_mJru9sZ0zVPrcarh_oQianXWkGob5QDalbPFbH5FwZbYsbbV41aG0jPeqrLZxBGKPoj29PF4QRItKQogjuu73wJmB7AyfHPgczrleh5I6oxfeFFEPIX-Mmpw2-thL-itBItWA8LQmqiQSM80PiSKir2KuSoP-vPdeuxtZlQ8OY1HhsK5GPfEOt2GJrZ2f1ydEZxOR5eLQ13SFHGtZcgRusLSGs51Zs976u2rEChescWYaOBuig')",
+      "url('https://kimi-web-img.moonshot.cn/img/integratedbiometrics.com/96bf5604278275973ff900c1aa42109983a12f46.png')",
+  },
+  {
+    name: "IB Five-O",
+    type: "Fingerprint Scanner",
+    price: "$449.00",
+    description: "Multi-finger capture device for rapid enrollment.",
+    image:
+      "url('https://kimi-web-img.moonshot.cn/img/integratedbiometrics.com/1f39e7999c3db223097baeb605db30fe5ce5cc67.png')",
+  },
+  {
+    name: "SecuGen Hamster Pro 20",
+    type: "Fingerprint Scanner",
+    price: "$299.00",
+    description: "Optical fingerprint reader with USB connectivity.",
+    image:
+      "url('https://kimi-web-img.moonshot.cn/img/i5.walmartimages.com/8f198ed06471f5bb698e79a35d2e82b974ed72bc.jpeg')",
+  },
+  {
+    name: "SecuGen Hamster Pro 30",
+    type: "Fingerprint Scanner",
+    price: "$349.00",
+    description: "Enhanced optical sensor for superior image quality.",
+    image:
+      "url('https://kimi-web-img.moonshot.cn/img/secugen.com/506b91c6433e8f1e5a3dd282b38faf36ff821991.png')",
+  },
+  {
+    name: "SecuGen Hamster Air",
+    type: "Fingerprint Scanner",
+    price: "$379.00",
+    description: "Touchless fingerprint capture for hygienic authentication.",
+    image:
+      "url('https://kimi-web-img.moonshot.cn/img/www.cardlogix.com/947967d8ecfeee7de9c099a9226e0e20d662816f.webp')",
+  },
+  {
+    name: "Miaxis SM-91M",
+    type: "Fingerprint Scanner",
+    price: "$329.00",
+    description: "Compact module with high-quality fingerprint capture.",
+    image:
+      "url('https://kimi-web-img.moonshot.cn/img/tiimg.tistatic.com/d70bda3afff53b15d29dcf77c971faa5007dbc4c.jpg')",
+  },
+  {
+    name: "Logitech Webcam",
+    type: "Face Camera SBI",
+    price: "$89.00",
+    description:
+      "High-definition camera for facial capture and authentication.",
+    image:
+      "url('https://kimi-web-img.moonshot.cn/img/resource.logitech.com/f8825ced8bb0eb60301298cc9e86202b6ebb82ff.png')",
+  },
+  {
+    name: "Techforth Generic SBI",
+    type: "Secure Biometric Interface",
+    price: "$599.00",
+    description:
+      "MOSIP-compliant biometric capture device for fingerprint, face, and iris.",
+    image:
+      "url('https://kimi-web-img.moonshot.cn/img/mosip-marketplace-prod-images.s3.ap-south-1.amazonaws.com/4c2c07b2b4ba3f58022af122019e8e9b12c57226.png')",
   },
 ];
 
 export function Products() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const categories = [
+    "All",
+    "Iris Scanners",
+    "Fingerprint Scanners",
+    "Face Camera SBI",
+  ];
+  const filteredProducts = useMemo(() => {
+    if (selectedCategory === "All") return products;
+    if (selectedCategory === "Iris Scanners")
+      return products.filter((p) => p.type === "Iris Scanner");
+    if (selectedCategory === "Fingerprint Scanners")
+      return products.filter((p) => p.type === "Fingerprint Scanner");
+    if (selectedCategory === "Face Camera SBI")
+      return products.filter((p) => p.type === "Face Camera SBI");
+    return products;
+  }, [selectedCategory]);
+
   return (
     <MainLayout>
       <main className="flex-1 flex flex-col pt-28 pb-16 px-6 sm:px-10 lg:px-20">
@@ -47,50 +126,65 @@ export function Products() {
                 <span className="bg-[color:var(--primary)]/10 text-[color:var(--primary)] text-xs font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider border border-[color:var(--primary)]/20">
                   Catalog
                 </span>
-                <span className="muted text-xs font-medium tracking-wide">Enterprise Hardware &amp; Software</span>
+                <span className="muted text-xs font-medium tracking-wide">
+                  Biometric Hardware Solutions
+                </span>
               </div>
               <div>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-current tracking-tight mb-4 font-[Manrope]">
-                  Aether Product Catalog
+                  Biometric Device Catalog
                 </h1>
                 <p className="muted text-base md:text-lg leading-relaxed max-w-xl">
-                  Curated systems, components, and licenses engineered for high‑performance data centers,
-                  AI workloads, and mission‑critical infrastructure.
+                  Enterprise-grade iris scanners, fingerprint readers, and
+                  multi-modal biometric systems for secure identity enrollment,
+                  authentication, and access control.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 {[
-                  { label: 'Categories', value: 'Hardware, Software' },
-                  { label: 'Availability', value: 'Global, 24/7' },
-                  { label: 'Lead Time', value: '< 5 business days' },
-                  { label: 'Support', value: 'Enterprise SLA' },
+                  {
+                    label: "Categories",
+                    value: "Iris, Fingerprint, Face, SBI",
+                  },
+                  { label: "Compliance", value: "MOSIP, FBI Certified" },
+                  { label: "Price Range", value: "$89 - $1,499" },
+                  { label: "Support", value: "Technical Documentation" },
                 ].map((item) => (
                   <div key={item.label}>
-                    <p className="muted uppercase tracking-wide text-xs mb-1">{item.label}</p>
-                    <p className="text-current font-mono text-sm">{item.value}</p>
+                    <p className="muted uppercase tracking-wide text-xs mb-1">
+                      {item.label}
+                    </p>
+                    <p className="text-current font-mono text-sm">
+                      {item.value}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
             <div className="w-full lg:w-1/2 h-64 lg:h-80 rounded-2xl overflow-hidden relative border border-[color:var(--border)]">
               <div
-                className="absolute inset-0 bg-cover bg-center opacity-70"
+                className="absolute inset-0 bg-cover bg-center opacity-80"
                 style={{
                   backgroundImage:
-                    "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDczTlNXMtHvvfas4nqNByjFySnhKZpmLgxbqdqcn6XR7F9wSEXr0Q8rSvEN7n_5u8thoCQOW_M6kztO8uLVoDKCy-pd0AJQ22ns9Xw90BOSDaDkyGVE1tbJ5Boe9pPliAJiiz8DZzPL26RAarIUINOnG6HOVSC36yuMX5K1HkhaGxWTUoy8ZTQlt-iwxmv-mBbMR4wFf0tNHFJ0sjaUkoPQfxb6cwpX64KTg8C7B53rr0inQpRWl2PahjLD9T7DJlUfSNh_dM3EA')",
+                    "url('https://kimi-web-img.moonshot.cn/img/static.vecteezy.com/7ffa530aa221802861cf5f1e07e88e2de081fcc8.jpg')",
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--card)] via-[color:var(--card)]/40 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4">
                 <div>
-                  <p className="text-xs text-[color:var(--primary)] font-mono mb-1">FLAGSHIP</p>
-                  <p className="text-current font-semibold">Aether Core Server X1</p>
+                  <p className="text-xs text-[color:var(--primary)] font-mono mb-1">
+                    FEATURED
+                  </p>
+                  <p className="text-current font-semibold">
+                    Techforth Generic SBI
+                  </p>
                   <p className="muted text-xs mt-1">
-                    Quantum‑ready architecture with integrated liquid cooling and 400GbE networking.
+                    Multi-modal biometric device with MOSIP compliance for
+                    fingerprint, face, and iris capture.
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-current font-bold text-lg">$4,999</p>
+                  <p className="text-current font-bold text-lg">$599</p>
                   <p className="muted text-xs">per unit</p>
                 </div>
               </div>
@@ -107,27 +201,32 @@ export function Products() {
                 Featured Peripherals &amp; Licenses
               </h2>
             </div>
-            <div className="flex gap-2">
-              {['filter_list', 'sort'].map((icon) => (
-                <button
-                  key={icon}
-                  type="button"
-                  className="p-2 rounded-xl border border-[color:var(--border)] bg-[color:var(--card)] muted hover:text-current hover:bg-[color:var(--muted)]/50 transition-all"
-                >
-                  <span className="material-symbols-outlined text-lg">{icon}</span>
-                </button>
-              ))}
-            </div>
+          </div>
+
+          <div className="flex items-center gap-3 mb-6">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
+                  selectedCategory === cat
+                    ? "bg-[color:var(--primary)] text-white"
+                    : "bg-[color:var(--card)] text-current border border-[color:var(--border)]"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {products.map((product) => (
+            {filteredProducts.map((product) => (
               <article
                 key={product.name}
                 className="group rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] p-4 hover:border-[color:var(--primary)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[color:var(--primary)]/5 flex flex-col"
               >
                 <div className="aspect-square w-full rounded-xl mb-4 overflow-hidden relative border border-[color:var(--border)]">
-                  {product.type === 'Software' && (
+                  {product.type === "Software" && (
                     <div className="absolute top-2 right-2 z-10 bg-[color:var(--primary)] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">
                       {product.type}
                     </div>
@@ -144,15 +243,6 @@ export function Products() {
                   <p className="muted text-sm mb-4 line-clamp-3 leading-relaxed">
                     {product.description}
                   </p>
-                  <div className="mt-auto flex items-center justify-between pt-3 border-t border-[color:var(--border)]">
-                    <span className="text-current font-bold">{product.price}</span>
-                    <button
-                      type="button"
-                      className="text-[color:var(--primary)] p-2 rounded-xl hover:bg-[color:var(--primary)]/10 transition-colors"
-                    >
-                      <span className="material-symbols-outlined text-[20px]">add_shopping_cart</span>
-                    </button>
-                  </div>
                 </div>
               </article>
             ))}
@@ -164,4 +254,3 @@ export function Products() {
 }
 
 export default Products;
-
