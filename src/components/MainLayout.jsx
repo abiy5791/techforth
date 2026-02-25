@@ -117,7 +117,7 @@ export function MainLayout({ children }) {
                 <div className="w-9 h-9 rounded-xl bg-[color:var(--primary)] flex items-center justify-center group-hover:scale-105 transition-transform">
                   <span className="material-symbols-outlined text-white text-xl">token</span>
                 </div>
-                <span className="font-bold text-lg tracking-tight text-current font-[Manrope]">NexGen</span>
+                <span className="font-bold text-lg tracking-tight text-current font-[Manrope]">TechForth</span>
               </Link>
 
               {/* Desktop Nav */}
@@ -189,7 +189,7 @@ export function MainLayout({ children }) {
                   <div className="w-8 h-8 rounded-lg bg-[color:var(--primary)] flex items-center justify-center">
                     <span className="material-symbols-outlined text-white text-lg">token</span>
                   </div>
-                  <span className="font-bold text-current font-[Manrope]">NexGen</span>
+                  <span className="font-bold text-current font-[Manrope]">TechForth</span>
                 </Link>
                 <button
                   onClick={() => setMobileOpen(false)}
@@ -261,7 +261,7 @@ export function MainLayout({ children }) {
                   <div className="w-9 h-9 rounded-xl bg-[color:var(--primary)] flex items-center justify-center">
                     <span className="material-symbols-outlined text-white text-xl">token</span>
                   </div>
-                  <span className="font-bold text-lg tracking-tight text-current font-[Manrope]">NexGen</span>
+                  <span className="font-bold text-lg tracking-tight text-current font-[Manrope]">TechForth</span>
                 </Link>
                 <p className="muted text-sm leading-relaxed max-w-xs mb-6">
                   Pioneering next-generation enterprise solutions. Scalable infrastructure, advanced AI, and
@@ -302,7 +302,7 @@ export function MainLayout({ children }) {
             {/* Bottom bar */}
             <div className="border-t border-[color:var(--border)] py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-xs muted">
-                &copy; {new Date().getFullYear()} NexGen Systems Inc. All rights reserved.
+                &copy; {new Date().getFullYear()} TechForth Solution Plc. All rights reserved.
               </p>
               <div className="flex gap-6 text-xs muted">
                 <a href="#" className="hover:text-[color:var(--primary)] transition-colors">Privacy</a>

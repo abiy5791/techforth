@@ -33,10 +33,10 @@ const services = [
 ];
 
 const faqs = [
-  { q: 'How does NexGen integrate with legacy ERP systems?', a: 'Our Universal Bridge API enables bidirectional data flow with SAP, Oracle, and custom environments with zero-downtime migrations.' },
+  { q: 'How does TechForth integrate with legacy ERP systems?', a: 'Our Universal Bridge API enables bidirectional data flow with SAP, Oracle, and custom environments with zero-downtime migrations.' },
   { q: 'What encryption standards are used for data at rest?', a: 'We use AES-256 with rotating keys managed by our KMS and support BYOK for enhanced compliance.' },
   { q: 'Is the AI model training data kept isolated?', a: 'Yes — we process training data in single-tenant containers and never use client data to improve base models.' },
-  { q: 'Can we deploy NexGen on-premise?', a: 'Yes — NexGen Edge supports air-gapped, on-premise deployments with feature parity.' },
+  { q: 'Can we deploy TechForth on-premise?', a: 'Yes — TechForth Edge supports air-gapped, on-premise deployments with feature parity.' },
 ];
 
 const trustedBy = [
@@ -216,7 +216,7 @@ export function Landing() {
                 <div className="flex justify-between items-start gap-4">
                   <div>
                     <h3 className="text-xl font-bold text-current mb-1.5 group-hover:text-[color:var(--primary)] transition-colors">
-                      NexGen Product {i + 1}
+                      TechForth Product {i + 1}
                     </h3>
                     <p className="text-sm muted max-w-md">
                       A concise description highlighting key capabilities and target use-cases.
@@ -358,7 +358,7 @@ export function Landing() {
             Ready to transform your business?
           </h2>
           <p className="relative z-10 muted text-lg md:text-xl max-w-2xl mx-auto mb-10">
-            Join the leading enterprises building the future on NexGen&apos;s robust infrastructure today.
+            Join the leading enterprises building the future on TechForth&apos;s robust infrastructure today.
           </p>
           <div className="relative z-10 flex flex-col sm:flex-row justify-center gap-5">
             <Link

@@ -23,7 +23,7 @@ export function About() {
           </div>
           <div className="relative z-10 mx-auto max-w-5xl text-center">
             <span className="mb-6 inline-block rounded-full border border-[color:var(--primary)]/30 bg-[color:var(--primary)]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[color:var(--primary)] backdrop-blur-sm">
-              About NexGen
+              About TechForth
             </span>
             <h1 className="mb-6 text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight text-current font-[Manrope]">
               Pioneering the{' '}
@@ -133,7 +133,7 @@ export function About() {
                 Meet the <span className="text-[color:var(--primary)]">Leadership</span>
               </h2>
               <p className="mt-4 text-lg muted max-w-2xl mx-auto">
-                The visionaries driving NexGen forward, combining decades of experience in engineering, design,
+                The visionaries driving TechForth forward, combining decades of experience in engineering, design,
                 and strategy.
               </p>
             </div>
