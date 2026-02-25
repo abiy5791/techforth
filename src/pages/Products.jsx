@@ -38,19 +38,19 @@ const products = [
 export function Products() {
   return (
     <MainLayout>
-      <main className="flex-1 flex flex-col pt-32 pb-16 px-6 sm:px-10 lg:px-16">
+      <main className="flex-1 flex flex-col pt-28 pb-16 px-6 sm:px-10 lg:px-20">
         {/* Hero / Featured Product */}
-        <section className="card cyber-panel border border-slate-200 dark:border-white/10 rounded-3xl p-8 md:p-10 mb-12 shadow-xl">
+        <section className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] p-8 md:p-10 mb-14 shadow-lg overflow-hidden">
           <div className="flex flex-col lg:flex-row gap-10 items-center">
             <div className="w-full lg:w-1/2 space-y-6">
-                <div className="inline-flex items-center gap-2">
-                <span className="bg-[color:var(--primary)]/10 text-[color:var(--primary)] text-xs font-bold px-2 py-1 rounded uppercase tracking-wider border border-[color:var(--primary)]/30">
+              <div className="inline-flex items-center gap-2">
+                <span className="bg-[color:var(--primary)]/10 text-[color:var(--primary)] text-xs font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider border border-[color:var(--primary)]/20">
                   Catalog
                 </span>
                 <span className="muted text-xs font-medium tracking-wide">Enterprise Hardware &amp; Software</span>
               </div>
               <div>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-current tracking-tight mb-4">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-current tracking-tight mb-4 font-[Manrope]">
                   Aether Product Catalog
                 </h1>
                 <p className="muted text-base md:text-lg leading-relaxed max-w-xl">
@@ -59,25 +59,20 @@ export function Products() {
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4 text-sm">
-                <div>
-                  <p className="muted uppercase tracking-wide text-xs mb-1">Categories</p>
-                  <p className="text-current font-mono">Hardware, Software</p>
-                </div>
-                <div>
-                  <p className="muted uppercase tracking-wide text-xs mb-1">Availability</p>
-                  <p className="text-current font-mono">Global, 24/7</p>
-                </div>
-                <div>
-                  <p className="muted uppercase tracking-wide text-xs mb-1">Lead Time</p>
-                  <p className="text-current font-mono">&lt; 5 business days</p>
-                </div>
-                <div>
-                  <p className="muted uppercase tracking-wide text-xs mb-1">Support</p>
-                  <p className="text-current font-mono">Enterprise SLA</p>
-                </div>
+                {[
+                  { label: 'Categories', value: 'Hardware, Software' },
+                  { label: 'Availability', value: 'Global, 24/7' },
+                  { label: 'Lead Time', value: '< 5 business days' },
+                  { label: 'Support', value: 'Enterprise SLA' },
+                ].map((item) => (
+                  <div key={item.label}>
+                    <p className="muted uppercase tracking-wide text-xs mb-1">{item.label}</p>
+                    <p className="text-current font-mono text-sm">{item.value}</p>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="w-full lg:w-1/2 h-64 lg:h-80 rounded-2xl overflow-hidden relative bg-slate-900 border border-white/10">
+            <div className="w-full lg:w-1/2 h-64 lg:h-80 rounded-2xl overflow-hidden relative border border-[color:var(--border)]">
               <div
                 className="absolute inset-0 bg-cover bg-center opacity-70"
                 style={{
@@ -85,7 +80,7 @@ export function Products() {
                     "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDczTlNXMtHvvfas4nqNByjFySnhKZpmLgxbqdqcn6XR7F9wSEXr0Q8rSvEN7n_5u8thoCQOW_M6kztO8uLVoDKCy-pd0AJQ22ns9Xw90BOSDaDkyGVE1tbJ5Boe9pPliAJiiz8DZzPL26RAarIUINOnG6HOVSC36yuMX5K1HkhaGxWTUoy8ZTQlt-iwxmv-mBbMR4wFf0tNHFJ0sjaUkoPQfxb6cwpX64KTg8C7B53rr0inQpRWl2PahjLD9T7DJlUfSNh_dM3EA')",
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--card)] via-[color:var(--card)]/40 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4">
                 <div>
                   <p className="text-xs text-[color:var(--primary)] font-mono mb-1">FLAGSHIP</p>
@@ -105,23 +100,23 @@ export function Products() {
 
         {/* Product Grid */}
         <section>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-current tracking-tight">
-              Featured Peripherals &amp; Licenses
-            </h2>
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <p className="section-label">Catalog</p>
+              <h2 className="text-2xl font-bold text-current tracking-tight font-[Manrope]">
+                Featured Peripherals &amp; Licenses
+              </h2>
+            </div>
             <div className="flex gap-2">
-              <button
-                type="button"
-                className="p-2 rounded-lg bg-white/60 dark:bg-surface-dark hover:bg-white/70 dark:hover:bg-white/10 text-current transition-colors border border-slate-200 dark:border-white/10"
-              >
-                <span className="material-symbols-outlined text-lg">filter_list</span>
-              </button>
-              <button
-                type="button"
-                className="p-2 rounded-lg bg-white/60 dark:bg-surface-dark hover:bg-white/70 dark:hover:bg-white/10 text-current transition-colors border border-slate-200 dark:border-white/10"
-              >
-                <span className="material-symbols-outlined text-lg">sort</span>
-              </button>
+              {['filter_list', 'sort'].map((icon) => (
+                <button
+                  key={icon}
+                  type="button"
+                  className="p-2 rounded-xl border border-[color:var(--border)] bg-[color:var(--card)] muted hover:text-current hover:bg-[color:var(--muted)]/50 transition-all"
+                >
+                  <span className="material-symbols-outlined text-lg">{icon}</span>
+                </button>
+              ))}
             </div>
           </div>
 
@@ -129,11 +124,11 @@ export function Products() {
             {products.map((product) => (
               <article
                 key={product.name}
-                className="group card border border-slate-200 dark:border-white/10 rounded-xl p-4 hover:border-[color:var(--primary)]/60 transition-all hover:shadow-lg flex flex-col"
+                className="group rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] p-4 hover:border-[color:var(--primary)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[color:var(--primary)]/5 flex flex-col"
               >
-                <div className="aspect-square w-full bg-neutral-900 rounded-lg mb-4 overflow-hidden relative">
+                <div className="aspect-square w-full rounded-xl mb-4 overflow-hidden relative border border-[color:var(--border)]">
                   {product.type === 'Software' && (
-                    <div className="absolute top-2 right-2 bg-[color:var(--primary)]/90 backdrop-blur text-[color:var(--primary-foreground)] text-[11px] font-bold px-2 py-1 rounded border border-[color:var(--primary-foreground)]/20">
+                    <div className="absolute top-2 right-2 z-10 bg-[color:var(--primary)] text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">
                       {product.type}
                     </div>
                   )}
@@ -146,16 +141,14 @@ export function Products() {
                   <h3 className="text-current font-semibold text-lg mb-1 group-hover:text-[color:var(--primary)] transition-colors">
                     {product.name}
                   </h3>
-                  <p className="muted text-sm mb-4 line-clamp-3">
+                  <p className="muted text-sm mb-4 line-clamp-3 leading-relaxed">
                     {product.description}
                   </p>
-                  <div className="mt-auto flex items-center justify-between pt-3 border-t border-slate-200 dark:border-white/10">
-                    <span className="text-current font-bold text-sm">
-                      {product.price}
-                    </span>
+                  <div className="mt-auto flex items-center justify-between pt-3 border-t border-[color:var(--border)]">
+                    <span className="text-current font-bold">{product.price}</span>
                     <button
                       type="button"
-                      className="text-[color:var(--primary)] hover:text-[color:var(--primary-foreground)] transition-colors p-2 rounded-full hover:bg-[color:var(--primary)]/10"
+                      className="text-[color:var(--primary)] p-2 rounded-xl hover:bg-[color:var(--primary)]/10 transition-colors"
                     >
                       <span className="material-symbols-outlined text-[20px]">add_shopping_cart</span>
                     </button>
