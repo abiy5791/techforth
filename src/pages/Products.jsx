@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { motion } from 'framer-motion';
 import { MainLayout } from "../components/MainLayout";
 import cmiImg from "../../assets/images/cmi.png";
 import iritechBkImg from "../../assets/images/iritech-bk.png";
@@ -120,7 +121,12 @@ export function Products() {
     <MainLayout>
       <main className="flex-1 flex flex-col pt-28 pb-16 px-6 sm:px-10 lg:px-20">
         {/* Hero / Featured Product */}
-        <section className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] p-8 md:p-10 mb-14 shadow-lg overflow-hidden">
+        <motion.section 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] p-8 md:p-10 mb-14 shadow-lg overflow-hidden"
+        >
           <div className="flex flex-col lg:flex-row gap-10 items-center">
             <div className="w-full lg:w-1/2 space-y-6">
               <div className="inline-flex items-center gap-2">
@@ -190,7 +196,7 @@ export function Products() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Product Grid */}
         <section>
@@ -220,9 +226,14 @@ export function Products() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProducts.map((product) => (
-              <article
+            {filteredProducts.map((product, idx) => (
+              <motion.article
                 key={product.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
                 className="group rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] p-4 hover:border-[color:var(--primary)]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[color:var(--primary)]/5 flex flex-col"
               >
                 <div className="aspect-square w-full rounded-xl mb-4 overflow-hidden relative border border-[color:var(--border)]">
@@ -250,7 +261,7 @@ export function Products() {
                     {product.description}
                   </p>
                 </div>
-              </article>
+              </motion.article>
             ))}
           </div>
         </section>

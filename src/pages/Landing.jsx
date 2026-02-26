@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { MainLayout } from '../components/MainLayout';
 import nationa_lid from '../../assets/images/national-id.jpg';
 import mosip_customization from '../../assets/images/mosip-customization.jpg';
@@ -58,26 +59,46 @@ export function Landing() {
 
         {/* ─── Hero ─── */}
         <section className="flex flex-col items-center justify-center text-center gap-7 mt-10 md:mt-20 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[color:var(--border)] bg-[color:var(--card)]">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[color:var(--border)] bg-[color:var(--card)]"
+          >
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-xs font-semibold muted uppercase tracking-widest">
               MOSIP Compliant
             </span>
-          </div>
+          </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.08] text-current font-[Manrope]">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.08] text-current font-[Manrope]"
+          >
             Empower Identity Through{' '}
             <span className="bg-gradient-to-r from-[color:var(--primary)] to-sky-400 bg-clip-text text-transparent text-glow">
               Innovative Technology
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-lg md:text-xl muted max-w-2xl font-light leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg md:text-xl muted max-w-2xl font-light leading-relaxed"
+          >
             We design, customize, and implement secure, scalable, and inclusive digital identity systems. 
             Bringing digital transformation to life through cutting-edge biometric technology.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-3 mt-2 w-full sm:w-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-3 mt-2 w-full sm:w-auto"
+          >
             <Link to="/contact" className="btn-primary text-base h-12 px-8 group">
               <span>Get Started</span>
               <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">
@@ -88,29 +109,46 @@ export function Landing() {
               <span className="material-symbols-outlined text-lg">play_circle</span>
               <span>Watch Demo</span>
             </button>
-          </div>
+          </motion.div>
         </section>
 
         {/* ─── Trusted By ─── */}
         <section className="mt-16 w-full py-8 border-y border-[color:var(--border)]">
-          <p className="text-center text-xs font-bold muted uppercase tracking-[0.3em] mb-6">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center text-xs font-bold muted uppercase tracking-[0.3em] mb-6"
+          >
             Trusted by Governments & Industry Leaders
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-50 hover:opacity-80 transition-opacity duration-500">
-            {trustedBy.map((b) => (
-              <div key={b.name} className="flex items-center gap-3 group cursor-default">
+          </motion.p>
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
+            {trustedBy.map((b, idx) => (
+              <motion.div 
+                key={b.name} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="flex items-center gap-3 group cursor-default"
+              >
                 <span className="material-symbols-outlined text-2xl muted group-hover:text-[color:var(--primary)] transition-colors">
                   {b.icon}
                 </span>
                 <span className="text-base font-bold text-current tracking-tight">{b.name}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>
 
         {/* ─── Core Technologies ─── */}
         <section className="mt-24 md:mt-32 w-full">
-          <div className="flex items-end justify-between mb-10 gap-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex items-end justify-between mb-10 gap-4"
+          >
             <div>
               <p className="section-label">Technology</p>
               <h2 className="text-2xl md:text-4xl font-bold text-current font-[Manrope]">Core Solutions</h2>
@@ -126,12 +164,17 @@ export function Landing() {
                 </button>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {techCards.map((card) => (
-              <article
+            {techCards.map((card, idx) => (
+              <motion.article
                 key={card.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}
                 className="group relative rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] overflow-hidden hover:border-[color:var(--primary)]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[color:var(--primary)]/5"
               >
                 {/* Image */}
@@ -153,25 +196,35 @@ export function Landing() {
                   </h4>
                   <p className="text-sm muted leading-relaxed">{card.body}</p>
                 </div>
-              </article>
+              </motion.article>
             ))}
           </div>
         </section>
 
         {/* ─── Services for Scale ─── */}
         <section className="mt-24 w-full">
-          <div className="text-center mb-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
             <p className="section-label justify-center">Our Capabilities</p>
             <h2 className="text-2xl md:text-4xl font-bold text-current font-[Manrope] mb-3">Integrated MOSIP-Compliant Systems</h2>
             <p className="muted max-w-2xl mx-auto">
               We develop specialized modules that integrate seamlessly with the MOSIP ecosystem to ensure centralized control and data integrity.
             </p>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {services.map((s) => (
-              <div
+            {services.map((s, idx) => (
+              <motion.div
                 key={s.title}
-                className="group p-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] hover:border-[color:var(--primary)]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[color:var(--primary)]/5"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="group p-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] hover:border-[color:var(--primary)]/30 transition-all duration-300 hover:shadow-lg hover:shadow-[color:var(--primary)]/5"
               >
                 <div className="w-12 h-12 rounded-xl bg-[color:var(--primary)]/10 flex items-center justify-center mb-4 group-hover:bg-[color:var(--primary)] transition-colors">
                   <span className="material-symbols-outlined text-2xl text-[color:var(--primary)] group-hover:text-white transition-colors">
@@ -180,14 +233,19 @@ export function Landing() {
                 </div>
                 <h4 className="text-lg font-bold text-current mb-2">{s.title}</h4>
                 <p className="text-sm muted leading-relaxed">{s.body}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>
 
         {/* ─── Featured Products ─── */}
         <section className="mt-24 w-full">
-          <div className="flex flex-col md:flex-row items-end justify-between mb-10 gap-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row items-end justify-between mb-10 gap-6"
+          >
             <div className="max-w-xl">
               <p className="section-label">Showcase</p>
               <h2 className="text-2xl md:text-4xl font-bold text-current font-[Manrope] mb-2">Featured Products</h2>
@@ -200,7 +258,7 @@ export function Landing() {
               View All Products
               <span className="material-symbols-outlined text-lg">arrow_right_alt</span>
             </Link>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
@@ -214,7 +272,14 @@ export function Landing() {
                 img: Fingerprint_Scanners
               }
             ].map((product, i) => (
-              <div key={i} className="group cursor-pointer">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, x: i === 0 ? -40 : 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.2 }}
+                className="group cursor-pointer"
+              >
                 <div className="aspect-video rounded-2xl overflow-hidden mb-5 border border-[color:var(--border)] relative shadow-lg">
                   <div className="absolute inset-0 bg-[color:var(--primary)]/0 group-hover:bg-[color:var(--primary)]/8 transition-colors z-10" />
                   <img
@@ -244,22 +309,31 @@ export function Landing() {
                     <span className="material-symbols-outlined text-lg">north_east</span>
                   </button>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>
 
         {/* ─── FAQ ─── */}
         <section className="mt-24 w-full">
-          <div className="text-center mb-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
             <p className="section-label justify-center">Support</p>
             <h2 className="text-2xl md:text-4xl font-bold text-current font-[Manrope] mb-2">Technical FAQ</h2>
             <p className="muted">Common questions about our digital identity solutions.</p>
-          </div>
+          </motion.div>
           <div className="max-w-3xl mx-auto space-y-3">
-            {faqs.map((f) => (
-              <div
+            {faqs.map((f, idx) => (
+              <motion.div
                 key={f.q}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
                 className="rounded-xl border border-[color:var(--border)] bg-[color:var(--card)] overflow-hidden hover:border-[color:var(--primary)]/30 transition-colors"
               >
                 <details className="group">
@@ -271,20 +345,25 @@ export function Landing() {
                   </summary>
                   <div className="text-sm muted px-5 pb-5 leading-relaxed">{f.a}</div>
                 </details>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>
 
         {/* ─── How It Works ─── */}
         <section className="mt-24 w-full">
-          <div className="text-center mb-14">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
             <p className="section-label justify-center">Process</p>
             <h2 className="text-3xl md:text-5xl font-bold text-current font-[Manrope] mb-3">Implementation in 3 Steps</h2>
             <p className="muted text-lg max-w-xl mx-auto">
               From discovery to deployment — we get your national identity system operational fast.
             </p>
-          </div>
+          </motion.div>
 
           <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Connecting line (desktop only) */}
@@ -313,7 +392,14 @@ export function Landing() {
                 tag: 'Ongoing',
               },
             ].map((item, idx) => (
-              <div key={item.step} className="relative group">
+              <motion.div 
+                key={item.step} 
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.2 }}
+                className="relative group"
+              >
                 {/* Step card */}
                 <div className="flex flex-col items-center text-center p-8 rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] hover:border-[color:var(--primary)]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[color:var(--primary)]/5 hover:-translate-y-1 h-full">
                   {/* Step number bubble */}
@@ -338,7 +424,7 @@ export function Landing() {
                     <span className="text-xs font-bold">{item.tag}</span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>
@@ -351,17 +437,30 @@ export function Landing() {
               { value: '4+', label: 'Industry Awards' },
               { value: '24/7', label: 'Technical Support' },
               { value: '100%', label: 'MOSIP Compliant' },
-            ].map((s) => (
-              <div key={s.label} className="flex flex-col gap-1">
+            ].map((s, idx) => (
+              <motion.div 
+                key={s.label} 
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="flex flex-col gap-1"
+              >
                 <span className="text-3xl md:text-4xl font-bold text-current">{s.value}</span>
                 <span className="text-sm muted uppercase tracking-wide">{s.label}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>
 
         {/* ─── CTA ─── */}
-        <section className="mt-8 mb-8 relative overflow-hidden rounded-[2.5rem] border border-[color:var(--border)] bg-[color:var(--card)] p-10 md:p-20 text-center group">
+        <motion.section 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-8 mb-8 relative overflow-hidden rounded-[2.5rem] border border-[color:var(--border)] bg-[color:var(--card)] p-10 md:p-20 text-center group"
+        >
           {/* Top accent line */}
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[color:var(--primary)] to-transparent opacity-50" />
 
@@ -389,7 +488,7 @@ export function Landing() {
               Contact Sales
             </Link>
           </div>
-        </section>
+        </motion.section>
       </main>
     </MainLayout>
   );

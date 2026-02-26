@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { MainLayout } from "../components/MainLayout";
 import profile1 from "../../assets/images/profile1.jpg";
 import profile2 from "../../assets/images/profile2.jpg";
@@ -35,7 +36,12 @@ export function About() {
     <MainLayout>
       <main className="flex-1 flex flex-col pt-28 pb-20">
         {/* Hero */}
-        <section className="relative flex min-h-[55vh] items-center justify-center overflow-hidden px-6">
+        <motion.section 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="relative flex min-h-[55vh] items-center justify-center overflow-hidden px-6"
+        >
           <div className="absolute inset-0 z-0">
             <img
               src={bannerImg}
@@ -45,30 +51,51 @@ export function About() {
             <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--background)]/20 via-[color:var(--background)]/60 to-[color:var(--background)]" />
           </div>
           <div className="relative z-10 mx-auto max-w-5xl text-center">
-            <span className="mb-6 inline-block rounded-full border border-[color:var(--primary)]/30 bg-[color:var(--primary)]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[color:var(--primary)] backdrop-blur-sm">
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-6 inline-block rounded-full border border-[color:var(--primary)]/30 bg-[color:var(--primary)]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[color:var(--primary)] backdrop-blur-sm"
+            >
               About Techforth
-            </span>
-            <h1 className="mb-6 text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight text-current font-[Manrope]">
+            </motion.span>
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mb-6 text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight text-current font-[Manrope]"
+            >
               Architecting the{" "}
               <span className="bg-gradient-to-r from-[color:var(--primary)] to-sky-400 bg-clip-text text-transparent">
                 Digital Future
               </span>
-            </h1>
-            <p className="mx-auto max-w-2xl text-lg muted md:text-xl leading-relaxed">
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mx-auto max-w-2xl text-lg muted md:text-xl leading-relaxed"
+            >
               We design, customize, and implement secure, scalable, and
               inclusive digital identity systems. Bringing digital
               transformation to life through cutting-edge technology and
               world-class expertise.
-            </p>
+            </motion.p>
           </div>
-        </section>
+        </motion.section>
 
         {/* Vision & Mission */}
         <section className="py-20">
           <div className="mx-auto max-w-6xl px-6 space-y-20">
             {/* Vision */}
             <div className="grid gap-10 md:grid-cols-2 items-center">
-              <div className="space-y-6">
+              <motion.div 
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
                 <div>
                   <p className="section-label">Philosophy</p>
                   <h2 className="text-3xl md:text-4xl font-black tracking-tight font-[Manrope]">
@@ -87,8 +114,15 @@ export function About() {
                   we are building the foundation for transparent, efficient, and
                   citizen-centric governance.
                 </p>
-              </div>
-              <div className="relative h-[360px] w-full overflow-hidden rounded-2xl border border-[color:var(--border)] shadow-xl group">
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.02 }}
+                className="relative h-[360px] w-full overflow-hidden rounded-2xl border border-[color:var(--border)] shadow-xl group"
+              >
                 <img
                   src={vissionImg}
                   alt="National ID infrastructure"
@@ -108,12 +142,19 @@ export function About() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* Mission */}
             <div className="grid gap-10 md:grid-cols-2 items-center">
-              <div className="relative h-[360px] w-full overflow-hidden rounded-2xl border border-[color:var(--border)] shadow-xl group">
+              <motion.div 
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.02 }}
+                className="relative h-[360px] w-full overflow-hidden rounded-2xl border border-[color:var(--border)] shadow-xl group"
+              >
                 <img
                   src={missionImg}
                   alt="Biometric enrollment technology"
@@ -133,8 +174,14 @@ export function About() {
                     </p>
                   </div>
                 </div>
-              </div>
-              <div className="space-y-6">
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
                 <div>
                   <p className="section-label">Purpose</p>
                   <h2 className="text-3xl md:text-4xl font-black tracking-tight font-[Manrope]">
@@ -164,7 +211,7 @@ export function About() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -185,9 +232,14 @@ export function About() {
               </p>
             </div>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {leaders.map((leader) => (
-                <div
+              {leaders.map((leader, idx) => (
+                <motion.div
                   key={leader.name}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  whileHover={{ y: -8, transition: { duration: 0.2 } }}
                   className="group flex flex-col items-center p-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--card)] hover:border-[color:var(--primary)]/30 transition-all duration-300 hover:shadow-lg hover:shadow-[color:var(--primary)]/5"
                 >
                   <div className="relative mb-5 h-36 w-36 overflow-hidden rounded-full border-4 border-[color:var(--border)] transition-all duration-300 group-hover:border-[color:var(--primary)] group-hover:scale-105">
@@ -203,7 +255,7 @@ export function About() {
                   <p className="text-xs font-medium text-[color:var(--primary)] uppercase tracking-wider mt-1">
                     {leader.role}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

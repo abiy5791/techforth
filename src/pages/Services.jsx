@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { MainLayout } from '../components/MainLayout';
 import identityImg from '../../assets/images/identity-system.jpg';
 import mosipImg from '../../assets/images/mosip-deployment.jpg';
@@ -50,7 +51,12 @@ export function Services() {
     <MainLayout>
       <main className="flex-1 flex flex-col pt-28 pb-20 px-6 sm:px-10 lg:px-20">
         {/* Overview */}
-        <section className="border-b border-[color:var(--border)] pb-14 mb-14">
+        <motion.section 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="border-b border-[color:var(--border)] pb-14 mb-14"
+        >
           <div className="max-w-4xl">
             <p className="section-label">Overview</p>
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-current mb-4 font-[Manrope]">
@@ -61,10 +67,16 @@ export function Services() {
               From system architecture to biometric enrollment, we deliver end-to-end identity solutions.
             </p>
           </div>
-        </section>
+        </motion.section>
 
         {/* Modular Innovation Section */}
-        <section className="rounded-2xl bg-[color:var(--secondary)]/30 border border-[color:var(--border)] p-8 mb-16">
+        <motion.section 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="rounded-2xl bg-[color:var(--secondary)]/30 border border-[color:var(--border)] p-8 mb-16"
+        >
           <div className="mb-8">
             <div className="flex items-center gap-3 text-[color:var(--primary)] mb-3">
               <span className="material-symbols-outlined">extension</span>
@@ -101,25 +113,36 @@ export function Services() {
                 title: 'Data Verification (RDVS)', 
                 body: 'Cross-checking and validation tools.' 
               },
-            ].map((module) => (
-              <div key={module.title} className="bg-[color:var(--card)] rounded-xl p-6 border border-[color:var(--border)]">
+            ].map((module, idx) => (
+              <motion.div 
+                key={module.title} 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="bg-[color:var(--card)] rounded-xl p-6 border border-[color:var(--border)]"
+              >
                 <span className="material-symbols-outlined text-[color:var(--primary)] mb-3 text-2xl">
                   {module.icon}
                 </span>
                 <h3 className="text-current font-semibold mb-2 text-sm">{module.title}</h3>
                 <p className="text-sm muted leading-relaxed">{module.body}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Service sections */}
         <div className="space-y-16">
           {sections.map((section, idx) => {
             const imageFirst = idx % 2 === 1;
             return (
-              <section
+              <motion.section
                 key={section.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
                 className={`rounded-2xl p-6 sm:p-10 ${
                   idx % 2 === 1
                     ? 'bg-[color:var(--secondary)]/30 border border-[color:var(--border)]'
@@ -153,7 +176,13 @@ export function Services() {
                   </div>
 
                   {/* Image */}
-                  <div className={`relative group ${imageFirst ? 'order-1' : 'order-1 lg:order-2'}`}>
+                  <motion.div 
+                    initial={{ opacity: 0, x: imageFirst ? -40 : 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className={`relative group ${imageFirst ? 'order-1' : 'order-1 lg:order-2'}`}
+                  >
                     <div className="absolute -inset-1 bg-gradient-to-r from-[color:var(--primary)]/15 to-sky-500/15 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-700" />
                     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[color:var(--border)]">
                       <img
@@ -172,9 +201,9 @@ export function Services() {
                         </div>
                       )}
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
-              </section>
+              </motion.section>
             );
           })}
         </div>

@@ -81,6 +81,7 @@
 
 
 
+import { motion } from 'framer-motion';
 import { MainLayout } from '../components/MainLayout';
 
 export function Contact() {
@@ -92,7 +93,12 @@ export function Contact() {
       <main className="flex-1 px-6 sm:px-10 lg:px-20 pt-28 pb-16">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Form */}
-          <section className="flex flex-col gap-8">
+          <motion.section 
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col gap-8"
+          >
             <div className="space-y-4">
               <p className="section-label">Contact</p>
               <h1 className="text-current text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-[-0.03em] font-[Manrope]">
@@ -191,10 +197,15 @@ export function Contact() {
                 </span>
               </button>
             </form>
-          </section>
+          </motion.section>
 
           {/* Map & Info */}
-          <section className="flex flex-col gap-6">
+          <motion.section 
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col gap-6"
+          >
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-[color:var(--primary)]">location_on</span>
               <h3 className="text-current text-xl font-bold">Our Location</h3>
@@ -275,7 +286,7 @@ export function Contact() {
                 <span className="material-symbols-outlined text-lg">arrow_forward</span>
               </a>
             </div>
-          </section>
+          </motion.section>
         </div>
       </main>
     </MainLayout>
