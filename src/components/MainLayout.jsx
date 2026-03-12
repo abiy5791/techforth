@@ -43,6 +43,7 @@ export function MainLayout({ children }) {
   const [isDark, setIsDark] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
   const location = useLocation();
 
   // Close mobile menu on route change
@@ -50,11 +51,18 @@ export function MainLayout({ children }) {
     setMobileOpen(false);
   }, [location.pathname]);
 
-  // Scroll detection for navbar
+  // Scroll detection for navbar + back-to-top
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+      setShowBackToTop(window.scrollY > 400);
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   // Lock body scroll when mobile menu is open
@@ -299,6 +307,20 @@ export function MainLayout({ children }) {
           </div>
         </footer>
       </div>
+
+      {/* ─── Back to Top ─── */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full bg-[color:var(--primary)] text-white flex items-center justify-center transition-all duration-300 cursor-pointer shadow-[0_4px_14px_color-mix(in_oklab,var(--primary)_25%,transparent)] hover:shadow-[0_6px_24px_color-mix(in_oklab,var(--primary)_35%,transparent)] hover:-translate-y-0.5 ${
+          showBackToTop
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 translate-y-4 pointer-events-none'
+        }`}
+        aria-label="Back to top"
+        type="button"
+      >
+        <span className="material-symbols-outlined text-lg">keyboard_arrow_up</span>
+      </button>
     </div>
   );
 }
