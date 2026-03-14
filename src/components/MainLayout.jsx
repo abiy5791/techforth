@@ -1,5 +1,7 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useEffect, useState, useCallback } from 'react';
+import logoName from '../../assets/logo/logo_name.png';
+import logoIcon from '../../assets/logo/logo_icon.png';
 
 const navItems = [
   { to: '/', label: 'Home', icon: 'home' },
@@ -122,11 +124,8 @@ export function MainLayout({ children }) {
               }`}
             >
               {/* Logo */}
-              <Link to="/" className="flex items-center gap-2.5 group">
-                <div className="w-9 h-9 rounded-xl bg-[color:var(--primary)] flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <span className="material-symbols-outlined text-white text-xl">fingerprint</span>
-                </div>
-                <span className="font-bold text-lg tracking-tight text-current font-[Manrope]">Techforth</span>
+              <Link to="/" className="flex items-center gap-3 group">
+                <img src={logoName} alt="Techforth" className="h-9 object-contain" />
               </Link>
 
               {/* Desktop Nav */}
@@ -188,10 +187,7 @@ export function MainLayout({ children }) {
             <div className="absolute top-0 right-0 bottom-0 w-[280px] bg-[color:var(--card)] border-l border-[color:var(--border)] shadow-2xl animate-slide-in-right flex flex-col">
               <div className="flex items-center justify-between p-5 border-b border-[color:var(--border)]">
                 <Link to="/" className="flex items-center gap-2.5" onClick={() => setMobileOpen(false)}>
-                  <div className="w-8 h-8 rounded-lg bg-[color:var(--primary)] flex items-center justify-center">
-                    <span className="material-symbols-outlined text-white text-lg">fingerprint</span>
-                  </div>
-                  <span className="font-bold text-current font-[Manrope]">Techforth</span>
+                  <img src={logoName} alt="Techforth" className="h-8 object-contain" />
                 </Link>
                 <button
                   onClick={() => setMobileOpen(false)}
@@ -253,9 +249,7 @@ export function MainLayout({ children }) {
               {/* Brand */}
               <div className="col-span-2">
                 <Link to="/" className="flex items-center gap-2.5 mb-5">
-                  <div className="w-9 h-9 rounded-xl bg-[color:var(--primary)] flex items-center justify-center">
-                    <span className="material-symbols-outlined text-white text-xl">fingerprint</span>
-                  </div>
+                  <img src={logoIcon} alt="Techforth" className="w-9 h-9 object-contain" />
                   <span className="font-bold text-lg tracking-tight text-current font-[Manrope]">Techforth</span>
                 </Link>
                 <p className="muted text-sm leading-relaxed max-w-xs mb-6">
